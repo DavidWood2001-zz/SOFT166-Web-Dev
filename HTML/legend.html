@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name=viewport" content="width=device-width, initial-scale=1">
+        <title>Legend</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+            <a class="navbar-brand float-left" href="#">Logo</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="nav nav-pills nav-justified">
+                    <li class="nav-item ">
+                        <a class="nav-link text-warning" id="Home" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link text-warning" id="About" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-warning" id="Legend" href="legend.html">Legend</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-warning" data-toggle="dropdown" href="#">Game</a>
+                        <div class="dropdown-menu bg-dark">
+                            <a class="dropdown-item text-warning" id = "Play" href="play.html">Play</a>
+                            <a class="dropdown-item text-warning" id = "Leaderboard" href="leaderboard.html">Leaderboard</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <script>
+            // Disable the title tab on the navbar
+            (function() {
+                if (document.title == "Home"){
+                    document.getElementById("Home").style.display='none';
+                }
+                else if (document.title == "About"){
+                    document.getElementById("About").style.display = 'none';
+                }
+                else if (document.title == "Legend") {
+                    document.getElementById("Legend").style.display = 'none';
+                }
+                else if (document.title == "Play"){
+                    document.getElementById("Play").style.display = 'none';
+                }
+                else if (document.title == "Leaderboard"){
+                    document.getElementById("Leaderboard").style.display = 'none';
+                }
+            })();
+        </script>
+    </body>
+</html>

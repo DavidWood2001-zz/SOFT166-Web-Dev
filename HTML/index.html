@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name=viewport" content="width=device-width, initial-scale=1">
-        <title>Bootstrap Example</title>
+        <title>Home</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
@@ -15,37 +15,30 @@
     <body>
         <!-- NAVBAR -->
         <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
-            <a class="navbar-brand float-left" href="#">Logo</a>
-            <!--
-            <form>
-                <div class="custom-control custom-switch" onclick="changeBG()">
-                    <input type="checkbox" class="custom-control-input" id="switch1">
-                    <label class="custom-control-label" for="switch1">Dark Mode</label>
-                </div>
-            </form>
-            -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon"></span>
+            <button class="navbar-toggler ml-auto hidden-sm-up float-xs-right" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon "></span>
             </button>
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="nav nav-pills nav-justified">
                     <li class="nav-item ">
-                        <a class="nav-link text-warning" href="#">About</a>
+                        <a class="nav-link text-warning" id="Home" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link text-warning" id="About" href="about.html">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-warning" href="#">Legend</a>
+                        <a class="nav-link text-warning" id="Legend" href="legend.html">Legend</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-warning" data-toggle="dropdown" href="#">Game</a>
                         <div class="dropdown-menu bg-dark">
-                            <a class="dropdown-item text-warning" href="#">Play</a>
-                            <a class="dropdown-item text-warning" href="#">Leaderboard</a>
+                            <a class="dropdown-item text-warning" id = "Play" href="play.html">Play</a>
+                            <a class="dropdown-item text-warning" id = "Leaderboard" href="leaderboard.html">Leaderboard</a>
                         </div>
                     </li>
                 </ul>
             </div>
         </nav>
-
         <!-- SIDEBAR-->
         <nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
             <div class="w3-container">
@@ -53,7 +46,7 @@
                     <i class="fa fa-remove"></i>
                 </a>
                 <br><br>
-                <img src="images/10653472.jpg" style="width:45%;" alt="profile photo" class="w3-round"><br><br>
+                <img src="../images/Profile%20photo.jpg" style="width:45%;" alt="profile photo" class="w3-round"><br><br>
                 <h4><b>David Wood Personal Pages</b></h4>
                 <p class="w3-text-grey">Template by W3.CSS</p>
             </div>
@@ -62,10 +55,10 @@
                 <a data-toggle="modal"  data-target="#myModal" class="w3-bar-item w3-button w3-padding"><i class="fa fa-envelope fa-fw w3-margin-right"></i>Contact</a>
             </div>
             <div class="w3-panel w3-large">
-                <a href="https://www.facebook.com/david.hartle.549#" target="_blank"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
-                <a href="https://www.instagram.com/davidwood741963/" target="_blank"><i class="fa fa-instagram w3-hover-opacity"></i></a>
-                <a href="images/snapcode.png" target="_blank"><i class="fa fa-snapchat w3-hover-opacity"></i></a>
-                <a href="https://www.linkedin.com/in/david-wood-15097a171?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BKD0w0d0STpCh1kv%2Fn2UjIQ%3D%3D" target="_blank"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+                <a href="https://www.facebook.com/david.hartle.549#" target="_blank" class="btn btn-facebook btn-social-icon w3-hover-opacity w3-"></a>
+                <a href="https://www.instagram.com/davidwood741963/" target="_blank" class="btn btn-instagram btn-social-icon w3-hover-opacity"></a>
+                <a href="../images/snapcode.png" target="_blank" class="btn btn-social-icon btn-facebook"><span class="fa fa-facbook"></span></a>
+                <a href="https://www.linkedin.com/in/david-wood-15097a171?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BKD0w0d0STpCh1kv%2Fn2UjIQ%3D%3D" target="_blank" class="btn btn-linkedin btn-social-icon"></a>
             </div>
         </nav>
 
@@ -81,29 +74,32 @@
                     </div>
 
                     <!-- Modal body -->
-                    <form class="needs-validation" novalidate>
+                    <form class="needs-validation" action="../PHP/action_page.php" method='post' novalidate>
                         <div class="form-group">
-                            <label for="uname">Username:</label>
-                            <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
+                            <label for="frm">From:</label>
+                            <input type="text" class="form-control" id="frm" placeholder="Enter email address" name="frm" required>
                             <div class="valid-feedback">Valid.</div>
                             <div class="invalid-feedback">Please fill out this field.</div>
                         </div>
                         <div class="form-group">
-                            <label for="pwd">Password:</label>
-                            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
+                            <label for="subj">Subject:</label>
+                            <input type="text" class="form-control" id="subj" placeholder="Enter subject" name="subj">
+                        </div>
+                        <div class="form-group">
+                            <label for="msg">Message:</label>
+                            <input type="text" class="form-control" id="msg" placeholder="Enter message" name="msg" required>
                             <div class="valid-feedback">Valid.</div>
                             <div class="invalid-feedback">Please fill out this field.</div>
                         </div>
                         <div class="form-group form-check">
                             <label class="form-check-label">
-                                <input class="form-check-input" type="checkbox" name="remember" required> I agree.
+                                <input class="form-check-input" type="checkbox" name="remember" required> I understand that my email will be visible to the recipient.
                                 <div class="valid-feedback">Valid.</div>
                                 <div class="invalid-feedback">Check this checkbox to continue.</div>
                             </label>
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary" data-toggle="modal alert-success" data-target="#mySuccess">Submit</button>
                     </form>
-
                     <!-- Modal footer -->
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -115,50 +111,13 @@
         <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
         <!-- MAIN BODY -->
+        <br><br>
         <div class="w3-main" style="margin-left:300px" id="bodyText">
             <div class=" jumbotron jumbotron-fluid">
                 <div class="container">
-                    <h1>Main Page <small>My First Bootstrap Page</small></h1>
-                    <p>This is <mark>some</mark> text.</p>
-                    <p>This is some <abbr title="more">more</abbr> text</p>
+                    <h1>Main Page <small>Welcome</small></h1>
                 </div>
             </div>
-            <div class =" container-fluid">
-                <blockquote class="blockquote">
-                    <p>And some even more fancy text just to highlight that this
-                        bootstrap thing is amazing and works really well. I love not
-                        having to bother with styling.</p>
-                    <footer class="blockquote-footer">David Wood, 2019</footer>
-                </blockquote>
-                <p>Press <kbd>ctrl+v</kbd> to paste any copied object on a screen</p>
-            </div>
-            <div class="alert alert-success alert-dismissible fade show">
-                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                <strong>Success!</strong> Indicates a successful or positive action.
-            </div>
-            <div class="container">
-                <button class="btn btn-primary">
-                    <span class="spinner-border spinner-border-sm"></span>
-                    Loading
-                </button>
-                <button type="button" class="btn btn-primary">
-                    Messages <span class="badge badge-light">4</span>
-                </button>
-                <br><br><br>
-            </div>
-            <div class="progress">
-                <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:70%">70%</div>
-            </div>
-            <div class="container">
-                <br><br><br>
-            </div>
-            <ul class="pagination justify-content-center" style="margin:20px 0">
-                <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
-                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">Next</a></li>
-            </ul>
         </div>
 
         <!-- JAVASCRIPT FOR WEBPAGE -->
@@ -183,6 +142,25 @@
                         }, false);
                     });
                 }, false);
+            })();
+
+            // Disable the title tab on the navbar
+            (function() {
+                if (document.title == "Home"){
+                    document.getElementById("Home").style.display='none';
+                }
+                else if (document.title == "About"){
+                    document.getElementById("About").style.display = 'none';
+                }
+                else if (document.title == "Legend") {
+                    document.getElementById("Legend").style.display = 'none';
+                }
+                else if (document.title == "Play"){
+                    document.getElementById("Play").style.display = 'none';
+                }
+                else if (document.title == "Leaderboard"){
+                    document.getElementById("Leaderboard").style.display = 'none';
+                }
             })();
         </script>
     </body>
