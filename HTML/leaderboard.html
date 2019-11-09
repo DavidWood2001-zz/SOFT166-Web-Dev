@@ -14,7 +14,6 @@
     </head>
     <body>
         <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
-            <a class="navbar-brand float-left" href="#">Logo</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -42,19 +41,19 @@
         <script>
             // Disable the title tab on the navbar
             (function() {
-                if (document.title == "Home"){
+                if (document.title === "Home"){
                     document.getElementById("Home").style.display='none';
                 }
-                else if (document.title == "About"){
+                else if (document.title === "About"){
                     document.getElementById("About").style.display = 'none';
                 }
-                else if (document.title == "Legend") {
+                else if (document.title === "Legend") {
                     document.getElementById("Legend").style.display = 'none';
                 }
-                else if (document.title == "Play"){
+                else if (document.title === "Play"){
                     document.getElementById("Play").style.display = 'none';
                 }
-                else if (document.title == "Leaderboard"){
+                else if (document.title === "Leaderboard"){
                     document.getElementById("Leaderboard").style.display = 'none';
                 }
             })();
