@@ -11,8 +11,25 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="../js/lightClicked.js"></script>
+        <style>
+            table {
+                width: 100%;
+            }
+            td{
+                width: 33.33%;
+                height: 10%;
+                border: 6px solid #222;
+            }
+            td:after {
+                content: '';
+                display: block;
+                margin-top: 100%;
+            }
+        </style>
     </head>
     <body>
+        <!-- NAVBAR -->
         <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
             <button class="navbar-toggler ml-auto hidden-sm-up float-xs-right" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
@@ -38,25 +55,20 @@
                 </ul>
             </div>
         </nav>
-        <script>
-            // Disable the title tab on the navbar
-            (function() {
-                if (document.title === "Home"){
-                    document.getElementById("Home").style.display='none';
-                }
-                else if (document.title === "About"){
-                    document.getElementById("About").style.display = 'none';
-                }
-                else if (document.title === "Legend") {
-                    document.getElementById("Legend").style.display = 'none';
-                }
-                else if (document.title === "Play"){
-                    document.getElementById("Play").style.display = 'none';
-                }
-                else if (document.title === "Leaderboard"){
-                    document.getElementById("Leaderboard").style.display = 'none';
-                }
-            })();
-        </script>
+        <!-- LIGHTGRID -->
+        <table id="LightGrid">
+            <tr>
+                <td class="bg-light" id="1"></td>
+                <td class="bg-light" id="4"></td>
+            </tr>
+            <tr>
+                <td class="bg-light" id="2"></td>
+                <td class="bg-light" id="5"></td>
+            </tr>
+            <tr>
+                <td class="bg-light" id="3"></td>
+                <td class="bg-light" id="6"></td>
+            </tr>
+        </table>
     </body>
 </html>
