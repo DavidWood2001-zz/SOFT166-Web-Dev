@@ -13,12 +13,12 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <script src="../js/lightClicked.js"></script>
         <style>
-            table {
+            Table {
                 width: 100%;
             }
             td{
                 width: 33.33%;
-                height: 10%;
+                height: 100px;
                 border: 6px solid #222;
             }
             td:after {
@@ -51,6 +51,9 @@
                             <a class="dropdown-item text-warning" id = "Play" href="play.html">Play</a>
                             <a class="dropdown-item text-warning" id = "Leaderboard" href="leaderboard.html">Leaderboard</a>
                         </div>
+                    </li>
+                    <li class="nav-item">
+                        <button id="nuke-all" onclick="nukeAll()">Nuke Em</button>
                     </li>
                 </ul>
             </div>

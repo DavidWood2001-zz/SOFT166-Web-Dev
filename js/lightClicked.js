@@ -44,3 +44,23 @@ $(document).ready(function()
 
     })
 });
+
+function getLightURINuke(integer){
+    var IP = "http://192.168.0.50/api/";
+    var username = "stlaB2I6VZ8O80Qepc-1xfmLrHgyTFvB9IGupaQz";
+    var lights = "/lights/";
+    var URI = IP + username + lights;
+    return URI+integer+"/"
+}
+
+function nukeAll() {
+    while (true) {
+        for (let i = 1; i < 7; i++) {
+            $.ajax({
+                url: getLightURINuke(i) + "state/",
+                type: "PUT",
+                data: JSON.stringify({"on": false})
+            })
+        }
+    }
+}
