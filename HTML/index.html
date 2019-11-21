@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../CSS/style_overloads.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -17,9 +18,9 @@
         <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
                 integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
                 crossorigin=""></script>
-        <style>
-            #mapid{height: 30%;}
-        </style>
+        <script src="../js/includeHTML.js"></script>
+        <script src="../js/modalScript.js"></script>
+        <script src="../js/mapFunctions.js"></script>
     </head>
     <body>
         <!-- NAVBAR -->
@@ -27,50 +28,10 @@
             <button class="navbar-toggler ml-auto hidden-sm-up float-xs-right" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon "></span>
             </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="nav nav-pills nav-justified">
-                    <li class="nav-item ">
-                        <a class="nav-link text-warning" id="Home" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link text-warning" id="About" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-warning" id="Legend" href="legend.html">Legend</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-warning" data-toggle="dropdown" href="#">Game</a>
-                        <div class="dropdown-menu bg-dark">
-                            <a class="dropdown-item text-warning" id = "Play" href="play.html">Play</a>
-                            <a class="dropdown-item text-warning" id = "Leaderboard" href="leaderboard.html">Leaderboard</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+            <div w3-include-html="navbar.html" class="collapse navbar-collapse" id="collapsibleNavbar"></div>
         </nav>
         <!-- SIDEBAR-->
-        <nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
-            <div class="w3-container">
-                <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey" title="close menu">
-                    <i class="fa fa-remove"></i>
-                </a>
-                <br><br>
-                <img src="../images/Profile%20photo.jpg" style="width:45%;" alt="profile photo" class="w3-round"><br><br>
-                <h4><b>David Wood Personal Pages</b></h4>
-                <p class="w3-text-grey">Template by W3.CSS</p>
-            </div>
-            <div class="w3-bar-block">
-                <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>About</a>
-                <a data-toggle="modal"  data-target="#myModal" class="w3-bar-item w3-button w3-padding"><i class="fa fa-envelope fa-fw w3-margin-right"></i>Contact</a>
-            </div>
-            <div class="w3-panel w3-large">
-                <a href="https://www.facebook.com/david.hartle.549#" target="_blank" class="btn btn-facebook btn-social-icon w3-hover-opacity w3-"></a>
-                <a href="https://www.instagram.com/davidwood741963/" target="_blank" class="btn btn-instagram btn-social-icon w3-hover-opacity"></a>
-                <a href="../images/snapcode.png" target="_blank" class="btn btn-social-icon btn-facebook"><span class="fa fa-facbook"></span></a>
-                <a href="https://www.linkedin.com/in/david-wood-15097a171?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BKD0w0d0STpCh1kv%2Fn2UjIQ%3D%3D" target="_blank" class="btn btn-linkedin btn-social-icon"></a>
-            </div>
-        </nav>
-
+        <div w3-include-html="sidebar.html"></div>
         <!-- MODAL -->
         <div class="modal fade" id="myModal">
             <div class="modal-dialog">
@@ -83,7 +44,7 @@
                     </div>
 
                     <!-- Modal body -->
-                    <form class="needs-validation" action="../PHP/action_page.php" method='post' novalidate>
+                    <form class="needs-validation modal-padding" action="../PHP/action_page.php" method='post' novalidate>
                         <div class="form-group">
                             <label for="frm">From:</label>
                             <input type="text" class="form-control" id="frm" placeholder="Enter email address" name="frm" required>
@@ -130,7 +91,7 @@
             </div>
             <!-- MAP -->
             <div class="d-flex mt-3 col-md-6 text-justified">
-                <div id="mapid" style="width: 800px; height: 400px;"></div>
+                <div id="mapid" style="height:400px; width:700px;"></div>
                 <script>
                     var mymap = L.map('mapid').setView([50.375406,-4.138342],13);
                     var marker = L.marker([50.375406,-4.138342]).addTo(mymap);
@@ -146,38 +107,8 @@
 
         <!-- JAVASCRIPT FOR WEBPAGE -->
         <script>
-            // Script to open and close sidebar
-            style="js/SideBar_handler.js";
-
-            // Disable form submissions if there are invalid fields
-            (function() {
-                'use strict';
-                window.addEventListener('load', function() {
-                    // Get the forms we want to add validation styles to
-                    const forms = document.getElementsByClassName('needs-validation');
-                    // Loop over them and prevent submission
-                    const validation = Array.prototype.filter.call(forms, function (form) {
-                        form.addEventListener('submit', function (event) {
-                            if (form.checkValidity() === false) {
-                                event.preventDefault();
-                                event.stopPropagation();
-                            }
-                            form.classList.add('was-validated');
-                        }, false);
-                    });
-                }, false);
-            })();
-
-            var popup = L.popup();
-
-            function onMapClick(e) {
-                popup
-                    .setLatLng(e.latlng)
-                    .setContent("You clicked the map at " + e.latlng.toString())
-                    .openOn(mymap);
-            }
-
             mymap.on('click', onMapClick);
+            includeHTML();
         </script>
     </body>
 </html>

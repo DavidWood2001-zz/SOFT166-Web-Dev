@@ -11,32 +11,19 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="../CSS/style_overloads.css">
+        <script src="../js/includeHTML.js"></script>
     </head>
     <body>
         <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
             <button class="navbar-toggler ml-auto hidden-sm-up float-xs-right" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="nav nav-pills nav-justified">
-                    <li class="nav-item ">
-                        <a class="nav-link text-warning" id="Home" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link text-warning" id="About" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-warning" id="Legend" href="legend.html">Legend</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-warning" data-toggle="dropdown" href="#">Game</a>
-                        <div class="dropdown-menu bg-dark">
-                            <a class="dropdown-item text-warning" id = "Play" href="play.html">Play</a>
-                            <a class="dropdown-item text-warning" id = "Leaderboard" href="leaderboard.html">Leaderboard</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+            <div w3-include-html="navbar.html" class="collapse navbar-collapse" id="collapsibleNavbar"></div>
         </nav>
+        <div w3-include-html="sidebar.html"></div>
+    <script>
+        includeHTML();
+    </script>
     </body>
 </html>
