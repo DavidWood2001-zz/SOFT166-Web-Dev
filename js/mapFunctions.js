@@ -5,5 +5,3 @@ function onMapClick(e) {
         .setContent("You clicked the map at " + e.latlng.toString())
         .openOn(mymap);
 }
-
-
