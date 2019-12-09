@@ -42,7 +42,7 @@ $(document).ready(function()
     {
         togglelight($(this));
 
-    })
+    });
 });
 
 function getLightURINuke(integer){
@@ -54,13 +54,11 @@ function getLightURINuke(integer){
 }
 
 function nukeAll() {
-    while (true) {
-        for (let i = 1; i < 7; i++) {
-            $.ajax({
-                url: getLightURINuke(i) + "state/",
-                type: "PUT",
-                data: JSON.stringify({"on": false})
-            });
-        }
+    for (let i = 1; i < 7; i++) {
+        $.ajax({
+            url: getLightURINuke(i) + "state/",
+            type: "PUT",
+            data: JSON.stringify({"on": false})
+        });
     }
 }
