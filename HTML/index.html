@@ -32,54 +32,8 @@
         </nav>
         <!-- SIDEBAR-->
         <div w3-include-html="sidebar.html"></div>
-        <!-- MODAL -->
-        <div class="modal fade" id="myModal">
-            <div class="modal-dialog">
-                <div class="modal-content">
 
-                    <!-- Modal Header -->
-                    <div class="modal-header">
-                        <h4 class="modal-title">Send An Email</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-
-                    <!-- Modal body -->
-                    <form class="needs-validation modal-padding" action="../PHP/action_page.php" method='post' novalidate>
-                        <div class="form-group">
-                            <label for="frm">From:</label>
-                            <input type="text" class="form-control" id="frm" placeholder="Enter email address" name="frm" required>
-                            <div class="valid-feedback">Valid.</div>
-                            <div class="invalid-feedback">Please fill out this field.</div>
-                        </div>
-                        <div class="form-group">
-                            <label for="subj">Subject:</label>
-                            <input type="text" class="form-control" id="subj" placeholder="Enter subject" name="subj">
-                        </div>
-                        <div class="form-group">
-                            <label for="msg">Message:</label>
-                            <input type="text" class="form-control" id="msg" placeholder="Enter message" name="msg" required>
-                            <div class="valid-feedback">Valid.</div>
-                            <div class="invalid-feedback">Please fill out this field.</div>
-                        </div>
-                        <div class="form-group form-check">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="checkbox" name="remember" required> I understand that my email will be visible to the recipient.
-                                <div class="valid-feedback">Valid.</div>
-                                <div class="invalid-feedback">Check this checkbox to continue.</div>
-                            </label>
-                        </div>
-                        <button type="submit" class="btn btn-primary" data-toggle="modal alert-success" data-target="#mySuccess">Submit</button>
-                    </form>
-                    <!-- Modal footer -->
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                    </div>
-
-                </div>
-            </div>
-        </div>
         <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
         <!-- MAIN BODY -->
         <br><br>
         <div class="w3-main" style="margin-left:300px" id="bodyText">
