@@ -32,7 +32,7 @@ function togglelight(element)
             url: getLightURI(element) + "state/",
             type: "PUT",
             data: JSON.stringify(lightState)
-        })
+        });
     });
 }
 
