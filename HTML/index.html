@@ -31,52 +31,6 @@
         </nav>
         <!-- SIDEBAR-->
         <div w3-include-html="sidebar.html"></div>
-        <!-- MODAL -->
-        <div class="modal fade" id="myModal">
-            <div class="modal-dialog">
-                <div class="modal-content">
-
-                    <!-- Modal Header -->
-                    <div class="modal-header">
-                        <h4 class="modal-title">Send An Email</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
-
-                    <!-- Modal body -->
-                    <form class="needs-validation modal-padding" action="../PHP/action_page.php" method='post' novalidate>
-                        <div class="form-group">
-                            <label for="frm">From:</label>
-                            <input type="text" class="form-control" id="frm" placeholder="Enter email address" name="frm" required>
-                            <div class="valid-feedback">Valid.</div>
-                            <div class="invalid-feedback">Please fill out this field.</div>
-                        </div>
-                        <div class="form-group">
-                            <label for="subj">Subject:</label>
-                            <input type="text" class="form-control" id="subj" placeholder="Enter subject" name="subj">
-                        </div>
-                        <div class="form-group">
-                            <label for="msg">Message:</label>
-                            <input type="text" class="form-control" id="msg" placeholder="Enter message" name="msg" required>
-                            <div class="valid-feedback">Valid.</div>
-                            <div class="invalid-feedback">Please fill out this field.</div>
-                        </div>
-                        <div class="form-group form-check">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="checkbox" name="remember" required> I understand that my email will be visible to the recipient.
-                                <div class="valid-feedback">Valid.</div>
-                                <div class="invalid-feedback">Check this checkbox to continue.</div>
-                            </label>
-                        </div>
-                        <button type="submit" class="btn btn-primary" data-toggle="modal alert-success" data-target="#mySuccess">Submit</button>
-                    </form>
-                    <!-- Modal footer -->
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                    </div>
-
-                </div>
-            </div>
-        </div>
         <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
         <!-- MAIN BODY -->
@@ -88,6 +42,25 @@
                     <h1>Main Page <small>Welcome</small></h1>
                 </div>
             </div>
+            <h1> Home Page</h1>
+            <p> This is the home page for the memory game with the Hue lights
+            This website contains four web pages</p>
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Play</li>
+                <li>Key</li>
+            </ul>
+            <h3>Home</h3>
+            <p>This webpage is the page you are on, it is just an introduction to the game, the site and how it all works in general. More information on that later</p>
+            <h3>About</h3>
+            <p>This webpage contains everything you will need to know about how to play the game on the Play page. This site will contain more in-depth instructions than on this one.</p>
+            <h3>Play</h3>
+            <p>This webpage contains the actual game that you play with the Hue lights</p>
+            <h3>Key</h3>
+            <p>This webpage gives a more in-depth look into what each of the lights mean and how they relate to the game.</p>
+            <br><br><br>
+
             <!-- MAP -->
             <div class="d-flex mt-3 col-md-6 text-justified">
                 <div id="mapid" style="height:400px; width:700px;"></div>
@@ -102,8 +75,11 @@
                     }).addTo(mymap);
                 </script>
             </div>
+            <br><br>
+            <a href="https://github.com/DavidWood2001/SOFT166-Web-Dev">Github for the project</a><br>
+            <a href="https://trello.com/b/7HHg1rTH/soft166-project">Trello Board for the project</a>
         </div>
-
+        <br><br><br>
         <!-- JAVASCRIPT FOR WEBPAGE -->
         <script>
             mymap.on('click', onMapClick);
