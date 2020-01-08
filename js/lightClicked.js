@@ -11,7 +11,12 @@ function togglelight(element)
 {
     var getState = $.getJSON(getLightURI(element), function (data)
     {
-        var state = data["state"]["on"];
+        try {
+            var state = data["state"]["on"];
+        }
+        catch(err){
+            returnError();
+        }
         if (state)
         {
             state = false;
@@ -27,12 +32,11 @@ function togglelight(element)
         "sat":255,
         "effect":"colorloop",
         "alert":"lselect"};
-
         $.ajax({
-            url: getLightURI(element) + "state/",
-            type: "PUT",
-            data: JSON.stringify(lightState)
-        });
+                url: getLightURI(element) + "state/",
+                type: "PUT",
+                data: JSON.stringify(lightState)
+            });
     });
 }
 
@@ -61,4 +65,8 @@ function nukeAll() {
             data: JSON.stringify({"on": false})
         });
     }
+}
+
+function returnError(){
+    document.getElementById("lightAlert").style.visibility = "visible";
 }
