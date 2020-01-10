@@ -124,7 +124,7 @@ function compare(){
             score += 1;
             alert("CORRECT");
             document.getElementById("score").innerText =`Score : ${score}`;
-            interval -= 5;
+            interval -= 10;
             addToSequence(score);
         }
     }
@@ -154,6 +154,7 @@ function end(){
         started = false;
         curlight = 6;
         score = 0;
+        interval = 800;
         document.getElementById("score").innerText =`Score : ${score}`;
         window.onload(this);
         flashRed();

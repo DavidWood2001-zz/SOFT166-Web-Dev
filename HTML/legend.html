@@ -13,6 +13,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="../CSS/style_overloads.css">
         <script src="../js/includeHTML.js"></script>
+        <script src="../js/gameFunctions.js"></script>
     </head>
     <body>
         <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
@@ -22,6 +23,18 @@
             <div w3-include-html="navbar.html" class="collapse navbar-collapse" id="collapsibleNavbar"></div>
         </nav>
         <div w3-include-html="sidebar.html"></div>
+        <div class="w3-main" style="margin-left:300px" id="bodyText">
+            <br><br><br><br>
+            <h1 style="padding-left: 5%">Legend</h1>
+            <br>
+            <h3 style="padding-left: 5%">Play with the buttons and get comfortable with the HUE queues</h3>
+            <br><br><br>
+            <div class="btn-group btn-group-lg" style="width:95%; padding-left: 5%">
+                <button type="button" class="btn btn-success" style="width:33%" onclick="turnOnAll()">Start Sequence</button>
+                <button type="button" class="btn btn-primary" style="width:33%" onclick="turnOnAll(); turnOffLight(6)">Loss of life</button>
+                <button type="button" class="btn btn-danger" style="width:33%" onclick="flashRed();">End of game</button>
+            </div>
+        </div>
     <script>
         includeHTML();
     </script>
