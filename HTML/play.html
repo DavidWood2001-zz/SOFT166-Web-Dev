@@ -11,9 +11,9 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <script src="../js/lightClicked.js"></script>
         <link rel="stylesheet" href="../CSS/style_overloads.css">
         <script src="../js/includeHTML.js"></script>
+        <script src="../js/gameFunctions.js"></script>
     </head>
     <body>
         <!-- NAVBAR -->
@@ -28,28 +28,32 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-2">
+                    <br><br>
+                    <button type="button" class="btn btn-success" onclick="startBtnClick()">Play</button>
                     <br><br><br>
-                    <p>Put game bits here</p>
+                    <p>Colour Sequence</p>
+                    <div class="container-fluid" id="gameContainer" style="border:3px solid black; border-radius: 8px;">
+                        <br><br><br><br><br>
+                    </div>
                     <div class="alert alert-warning" id = "lightAlert" style="visibility: hidden">
                         <strong>Warning!</strong> Could not reach the lights. Check your internet connection.
                     </div>
                 </div>
                 <div class="col-sm-10">
-            <!-- LIGHTGRID -->
-                    <table id="LightGrid">
-                        <tr>
-                            <td class="bg-light" id="1"></td>
-                            <td class="bg-light" id="4"></td>
-                        </tr>
-                        <tr>
-                            <td class="bg-light" id="2"></td>
-                            <td class="bg-light" id="5"></td>
-                        </tr>
-                        <tr>
-                            <td class="bg-light" id="3"></td>
-                            <td class="bg-light" id="6"></td>
-                        </tr>
-                    </table>
+                    <div class="btn-group btn-group-lg" style="width:100%">
+                        <button type="button" class="btn btn-default" style="width:50%; height:60px;" onclick="buttonClick(0)">White</button>
+                        <button type="button" class="btn btn-primary" style="width:50%; height:60px;" onclick="buttonClick(1)" >Blue</button>
+                    </div>
+                    <br>
+                    <div class="btn-group btn-group-lg" style="width:100%">
+                        <button type="button" class="btn btn-info" style="width:50%; height:60px;" onclick="buttonClick(2)" >Light Blue</button>
+                        <button type="button" class="btn btn-success" style="width:50%; height:60px;" onclick="buttonClick(3)" >Green</button>
+                    </div>
+                    <br>
+                    <div class="btn-group btn-group-lg" style="width:100%">
+                        <button type="button" class="btn btn-warning" style="width:50%; height:60px;" onclick="buttonClick(4)" >Orange</button>
+                        <button type="button" class="btn btn-danger" style="width:50%; height:60px;" onclick="buttonClick((5))" >Red</button>
+                    </div>
                 </div>
             </div>
         </div>
