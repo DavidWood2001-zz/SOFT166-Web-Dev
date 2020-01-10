@@ -3,7 +3,7 @@
 This is a repository to hold all of the files for the SOFT166 Web development half of the SOFT166 module - this is the coursework.
 
 ## Youtube Demonstration
-link to YT vid here
+![Youtube Video](https://img.youtube.com/vi/5rsr5OzfG-U/0.jpg) https://www.youtube.com/watch?v=5rsr5OzfG-U&feature=youtu.be
 ## Screenshots
 Below are a few screenshots from the website.
 ### Home Page
