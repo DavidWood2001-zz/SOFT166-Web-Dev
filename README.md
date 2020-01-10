@@ -32,8 +32,10 @@ Below are a few screenshots from the website.
  - Unrestricted browser access
 	 - Most popular browsers have been tested for compatibility (detailed below) 
 ## Web Accessibility
+All of these are to adhere to the Web Accessiblity Guidelines outlined in this link here
+https://www.w3.org/TR/WAI-WEBCONTENT/
 ### Bootstrap
-I have used bootstrap CSS templates to reduce the overall size of the project. Using an external library of CSS styling attributes means that the actual size of the project is reduced as a large portion of the styling elements are outsourced. 
+I have used bootstrap CSS templates (Guideline 3 of WAI) to reduce the overall size of the project. Using an external library of CSS styling attributes means that the actual size of the project is reduced as a large portion of the styling elements are outsourced. Bootstrap also enable a responsive design (WAI 2.1). Bootstraps templates are also largely compliant with older technologies and most don't rely on newer versions of those technologies (Guideline 6 of WAI).
 
 Another benefit to using bootstrap templates is that it is easier to keep the colour scheme, layout and general design of all of the web pages the same.
 
